@@ -10,4 +10,4 @@ Foram utilizadas bibliotecas como: pandas, selenium e BeautifulSoup.
 //
 This was work for the City of Belo Horizonte, so the code has incomplete parts as it contains credentials and confidential information.
 //
-Esse foi um trabalho para a Prefeitura de Belo Horizonte, então o código tem partes incompletas por contar credenciais e informações sigilosas.
+Esse foi um trabalho para a Prefeitura de Belo Horizonte, então o código tem partes incompletas por conter credenciais e informações sigilosas.
