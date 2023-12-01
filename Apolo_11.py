@@ -7,7 +7,7 @@ import time
 from selenium.webdriver.chrome.service import Service
 
 # Leitura do arquivo Excel e criação do DataFrame
-diretorio = 'C:/Users/pres00317640/Desktop/Material de Trabalho/SMEL/Equipamentos.xlsx'
+diretorio = 'C:/Users/.../Desktop/Material de Trabalho/SMEL/Equipamentos.xlsx'
 armazenador = pd.read_excel(diretorio)
 data_frame = pd.DataFrame(armazenador)
 
@@ -62,7 +62,7 @@ while (pontoDeParadaWhile != 140):
         navegador = webdriver.Chrome(service=servico)
 
         # ACESSAR O SITE DO CIC:
-        navegador.get('http://cic.pbh')
+        navegador.get('Site privado, pois trata de informações confidenciais')
 
         try:
             # ISERIR LOGIN
