@@ -44,9 +44,6 @@ ListaUnidade = []
 # CASO OCORRA ALGUMA QUEBRA O ALGORITIMO RETOMA A CONTAGEM INICIANDO NO ULTIMO PONTO DE PARADA WHILE
 pontoDeParadaWhile = 0
 
-# ENQUANTO O PONTO DE PARA FOR DIFERENTE DE 2030, CONTINUE TENTANDO REALIZAR O CADASTRO
-
-
 while (pontoDeParadaWhile != 140):
 
     for x in range(pontoDeParadaWhile, 140):
@@ -55,7 +52,6 @@ while (pontoDeParadaWhile != 140):
         print("Estamos cadastrando a unidade:", pontoDeParadaWhile, "ao quebrar retorne a partir do: ",
               pontoDeParadaWhile)
 
-        # PEGANDO OS DADOS DO DATA FRAME
         valorLinha = pontoDeParadaWhile
 
         servico = Service(ChromeDriverManager().install())
@@ -181,7 +177,7 @@ while (pontoDeParadaWhile != 140):
         time.sleep(2)
 
         try:
-            # ENTRANDO NO I-FRAME PARA INSERIR DOS DADOS
+            # ENTRANDO NO IFRAME PARA INSERIR DOS DADOS
             navegador.switch_to.frame(0)
         except:
             print("houve uma quebra nesse ponto: ", pontoDeParadaWhile)
@@ -225,7 +221,6 @@ while (pontoDeParadaWhile != 140):
             break
 
         try:
-            # Preencha o campo "numeroFinal" com o valor desejado (numlog)
             navegador.find_element('xpath', '//*[@id="numeroFinal"]').send_keys(numlog)
         except:
             print("houve uma quebra nesse ponto: ", pontoDeParadaWhile)
@@ -238,14 +233,11 @@ while (pontoDeParadaWhile != 140):
             print("houve uma quebra nesse ponto: ", pontoDeParadaWhile)
             break
 
-        # Descanse por 30 segundos (ou o tempo necessário para a página carregar)
         time.sleep(5)
 
         try:
-            # Verifique se o tipo de equipamento está no dicionário de mapeamento
             if tipo in mapeamento_valores:
                 valor_para_preencher = mapeamento_valores[tipo]
-                # Localize o campo apropriado no site (substitua o XPath correto)
                 campo_input = navegador.find_element('xpath', '//*[@id="mestre-tipo_unidade"]')
                 campo_input.send_keys(valor_para_preencher)
         except:
@@ -263,7 +255,6 @@ while (pontoDeParadaWhile != 140):
         time.sleep(3)
 
         try:
-            # FINALIZANDO O IFRAME
             navegador.switch_to.default_content()
         except:
             print("houve uma quebra nesse ponto: ", pontoDeParadaWhile)
@@ -280,7 +271,6 @@ while (pontoDeParadaWhile != 140):
         time.sleep(3)
 
         try:
-            # CLICANDO NA OPCAO GRAVAR
             navegador.find_element('xpath', '//*[@id="gravar"]').click()
 
             # --------RASPAGEM DE DADOS ---------------------
